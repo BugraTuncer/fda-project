@@ -16,7 +16,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
       <div className="relative max-w-2xl mx-auto">
         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
           <svg
-            className="h-6 w-6 text-gray-400"
+            className="h-6 w-6 text-gray-500"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -34,12 +34,12 @@ const SearchInput: React.FC<SearchInputProps> = ({
           placeholder={placeholder}
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full pl-12 pr-4 py-4 text-lg border-2 border-gray-200 rounded-2xl shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all duration-300 ease-in-out bg-white/80 backdrop-blur-sm"
+          className="w-full pl-12 pr-4 py-4 text-lg border-2 border-gray-200 rounded-2xl shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all duration-300 ease-in-out bg-white text-gray-900 placeholder-gray-500"
         />
         {searchTerm && (
           <button
             onClick={() => onSearchChange("")}
-            className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+            className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
           >
             <svg
               className="h-6 w-6"
