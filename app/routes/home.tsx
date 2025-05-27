@@ -1,13 +1,16 @@
+import { DeviceContainer } from "~/containers/DeviceContainer";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "FDA Medical Device Explorer" },
+    {
+      name: "description",
+      content: "Explore FDA medical device data",
+    },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <DeviceContainer />;
 }
