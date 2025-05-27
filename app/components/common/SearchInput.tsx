@@ -9,8 +9,28 @@ interface SearchInputProps {
 const SearchInput: React.FC<SearchInputProps> = ({
   searchTerm,
   onSearchChange,
-  placeholder = "Search devices by name, K-number, or manufacturer...",
+  placeholder,
 }) => {
+  const [currentPlaceholder, setCurrentPlaceholder] = React.useState(
+    placeholder || "Search devices by name, K-number, or manufacturer..."
+  );
+
+  React.useEffect(() => {
+    const updatePlaceholder = () => {
+      if (!placeholder) {
+        setCurrentPlaceholder(
+          window.innerWidth < 768
+            ? "Search devices..."
+            : "Search devices by name, K-number, or manufacturer..."
+        );
+      }
+    };
+
+    updatePlaceholder();
+    window.addEventListener("resize", updatePlaceholder);
+    return () => window.removeEventListener("resize", updatePlaceholder);
+  }, [placeholder]);
+
   return (
     <div className="mb-10">
       <div className="relative max-w-2xl mx-auto">
@@ -31,7 +51,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         </div>
         <input
           type="text"
-          placeholder={placeholder}
+          placeholder={currentPlaceholder}
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
           className="w-full pl-12 pr-4 py-4 text-lg border-2 border-gray-200 rounded-2xl shadow-lg focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all duration-300 ease-in-out bg-white text-gray-900 placeholder-gray-500"

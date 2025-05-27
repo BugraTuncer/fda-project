@@ -92,7 +92,9 @@ const Pagination: React.FC<PaginationProps> = ({
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          <span className="text-sm font-medium text-gray-700">Previous</span>
+          <span className="text-sm font-medium text-gray-700 hidden md:inline">
+            Previous
+          </span>
         </button>
 
         <div className="flex items-center space-x-1">
@@ -129,7 +131,9 @@ const Pagination: React.FC<PaginationProps> = ({
           disabled={currentPage === totalPages || isFetching}
           className="group flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-xl shadow-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 ease-in-out cursor-pointer"
         >
-          <span className="text-sm font-medium text-gray-700">Next</span>
+          <span className="text-sm font-medium text-gray-700 hidden md:inline">
+            Next
+          </span>
           <svg
             className="w-4 h-4 text-gray-600"
             fill="none"

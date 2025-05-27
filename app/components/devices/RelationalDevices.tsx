@@ -79,13 +79,13 @@ const RelationalDevices: React.FC<RelationalDevicesProps> = ({
                   Drag nodes to explore connections
                 </p>
               </div>
-              <div className="flex items-center space-x-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-blue-600 rounded-full shadow-sm" />
+                  <div className="w-4 h-4 bg-blue-600 rounded-full shadow-sm flex-shrink-0" />
                   <span className="text-sm text-gray-700">Main Device</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-purple-500 rounded-full shadow-sm" />
+                  <div className="w-4 h-4 bg-purple-500 rounded-full shadow-sm flex-shrink-0" />
                   <span className="text-sm text-gray-700">Related Devices</span>
                 </div>
               </div>

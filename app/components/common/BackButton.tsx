@@ -13,7 +13,7 @@ const BackButton: React.FC<BackButtonProps> = ({
     <div className="mb-8">
       <button
         onClick={onClick}
-        className="flex items-center space-x-3 px-6 py-3 bg-blue-600 text-white rounded-2xl shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all cursor-pointer"
+        className="flex items-center justify-center md:justify-start md:space-x-3 px-3 md:px-6 py-3 bg-blue-600 text-white rounded-2xl shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ const BackButton: React.FC<BackButtonProps> = ({
             clipRule="evenodd"
           />
         </svg>
-        <span className="font-semibold">{text}</span>
+        <span className="font-semibold hidden md:inline">{text}</span>
       </button>
     </div>
   );
